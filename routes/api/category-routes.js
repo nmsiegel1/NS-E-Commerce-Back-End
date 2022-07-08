@@ -31,16 +31,10 @@ router.get("/:id", (req, res) => {
       },
     ],
   })
-    .then((dbCategoryData) => {
-      if (!dbCategoryData) {
-        res.status(404).json({ message: "No category found with this id" });
-        return;
-      }
-      res.json(dbCategoryData);
-    })
+    .then((dbTagData) => res.status(200).json(dbTagData))
     .catch((err) => {
       console.log(err);
-      res.status(500).json(err);
+      res.status(404).json(err);
     });
 });
 
@@ -61,16 +55,10 @@ router.put("/:id", (req, res) => {
       id: req.params.id,
     },
   })
-    .then((dbCategoryData) => {
-      if (!dbCategoryData[0]) {
-        res.status(404).json({ message: "No category found with this id" });
-        return;
-      }
-      res.json(dbCategoryData);
-    })
+    .then((dbTagData) => res.status(200).json(dbTagData))
     .catch((err) => {
       console.log(err);
-      res.status(500).json(err);
+      res.status(404).json(err);
     });
 });
 
@@ -81,16 +69,10 @@ router.delete("/:id", (req, res) => {
       id: req.params.id,
     },
   })
-    .then((dbCategoryData) => {
-      if (!dbCategoryData) {
-        res.status(404).json({ message: "No category found with this id" });
-        return;
-      }
-      res.json(dbCategoryData);
-    })
+    .then((dbTagData) => res.status(200).json(dbTagData))
     .catch((err) => {
       console.log(err);
-      res.status(500).json(err);
+      res.status(404).json(err);
     });
 });
 
